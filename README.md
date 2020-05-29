@@ -8,14 +8,9 @@ The idea of this project is to provide a Docker image to easily create a reverse
 Your DNS entry can point toward this reverse proxy and it will proxy pass to Notion.
 
 ## How to use
-
-    docker run -d --name notion-proxy \
-        -p 80:80 \
-        -e HOST=example.com \
-        -e PROTO=http \ 
-        -e REDIRECT=What-s-New-157765353f2c4705bd45474e5ba8b46c \
-        lobre/notion-proxy
-
+```
+docker run -d --name notion-proxy -p 80:80 -e HOST=domain.com -e PROTO=http -e REDIRECT=What-s-New-157765353f2c4705bd45474e5ba8b46c lobre/notion-proxy
+```
 You domain name `example.com` should resolve to the server where this container is started.
 
 Then try to browser `http://example.com`.
